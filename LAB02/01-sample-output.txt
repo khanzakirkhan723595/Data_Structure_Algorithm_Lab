@@ -1,0 +1,46 @@
+Positive numbers go into the stack, 0 pops the stack, and any negative number terminates the program.
+
+S: 23 * * * * * 
+
+S: 23 3 * * * * 
+
+S: 23 3 10 * * * 
+
+S: 23 3 10 13 * * 
+
+-> 13
+
+-> 10
+
+S: 23 3 56 * * * 
+
+S: 23 3 56 57 * * 
+
+S: 23 3 56 57 58 * 
+
+S: 23 3 56 57 58 59 
+
+Can't push 60, stack full.
+
+S: 23 3 56 57 58 59 
+
+-> 59
+
+-> 58
+
+-> 57
+
+S: 23 3 56 44 * * 
+
+S: 23 3 56 44 90 * 
+
+S: 23 3 56 44 90 1 
+
+-> 1
+-> 90
+-> 44
+-> 56
+-> 3
+-> 23
+Enter a string of parantheses: It is a string of balanced parantheses.
+Enter a string of parantheses: It is not a string of balanced parantheses.
