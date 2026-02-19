@@ -40,6 +40,18 @@ void printbinstrings(int p, int q)
 	/* Task 4: Print all 2^{q-p} binary strings that can be obtained from the global
 	 * 0-1 array arr by replacing arr[p] .. arr[q-1] with all possible (q-p)-length
 	 * bitstrings. */
+    if(p==q)
+    {
+
+        printarray();
+        return;
+    }
+    else{
+        arr[p]=0;
+        printbinstrings(p+1,q);
+        arr[p]=1;
+        printbinstrings(p+1,q);
+    }
 
 }
 
@@ -53,6 +65,28 @@ void printbinstringsnum(int p, int q, int num)
 	 * 0-1 array arr of length len (global variable) by replacing arr[p] ..
 	 * arr[q-1] with all possible (q-p)-length binary strings with exactly num
 	 * 1-bits. */
+
+    if(p==q)
+    {
+        int sum=0;
+        for(int i=0;i<q;i++)
+        {
+            sum+=arr[i];
+        }
+        if(sum==num)
+        {
+            printarray();
+            return;
+
+        }
+        
+    }
+    else{
+        arr[p]=0;
+        printbinstringsnum(p+1,q,num);
+        arr[p]=1;
+        printbinstringsnum(p+1,q,num);
+    }
 
 }
 
